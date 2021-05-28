@@ -6,6 +6,9 @@ import {fetchQuizeQuestions} from './API'
 //type
 import { Difficulty, QuestionState } from "./API"
 
+//styles
+import {GlobalStyle, Wrapper} from './App.styles'
+
 export type AnswerObject = {
   question: string;
   answer: string;
@@ -78,6 +81,9 @@ function App() {
 
 
   return (
+    <>
+    <GlobalStyle />
+    <Wrapper>
     <div className="App">
       <h1>REACT QUIZ</h1>
       {gameOver || userAnswers.length === TOTAL_QUESTIONS ? 
@@ -103,6 +109,8 @@ function App() {
       ) : null }
 
     </div>
+    </Wrapper>
+    </>
   );
 }
 
